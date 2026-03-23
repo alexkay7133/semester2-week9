@@ -29,4 +29,3 @@ Stack: { Node *top, int size }
 - do we have memory leaks?
 - ensure you have tested `pop()`
     - if you `pop()` data it is detached from the stack and must be separately deallocated with `free()`
-    
