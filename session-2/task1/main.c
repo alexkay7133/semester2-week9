@@ -14,12 +14,19 @@ int main( void ) {
 
     // add some nodes
     addNode(list,(Node *)NULL,1); // add at head - special case - pass NULL
+    addNode(list, list->head, 2);
+    addNode(list, list->head->next, 3);
+    addNode(list, list->head->next->next, 4);
 
     // display the list
+    traverseI(list->head);
 
-    // add and delete more nodes with addNode() and deleteNode()
+    // add and delete more nodes with addNode() and removeNode()
+    freeNode(removeNode(list, list->head->next));
     // deallocate deleted nodes - test with valgrind to check this
 
+
+    traverseI(list->head);
     // free list memory
     freeNodes( list->head );
 
